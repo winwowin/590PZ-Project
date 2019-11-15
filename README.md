@@ -1,2 +1,2 @@
-# 590PZ-Project
-Forks of this are student projects for IS 590PZ
+# Spot [in progress]
+I use Tkinter to make the board by using a grid of spot pictures (simply Paint it). There are 5 difference colors of spot pictures, red, blue, green, yellow, and empty spot, which I swap them on click. As the click function triggered, it also returns the coordinate of the TK windows and transposes back to x, y coordinate to use with the logical gameplay functions. The UI of the board is done and working properly. There are many functions to transpose back and forward between the UI and the logical coordinates. Gameplay part still need to be implemented.
