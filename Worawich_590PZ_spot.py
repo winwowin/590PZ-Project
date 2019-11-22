@@ -21,7 +21,7 @@ import Game_play
 # import AI
 
 
-EDGE_SIZE = 6
+EDGE_SIZE = 5
 IMG_SPACE = 120
 XSPACE = 35 * EDGE_SIZE
 YSPACE = 60
