@@ -21,7 +21,7 @@ import Game_play
 # import AI
 
 
-EDGE_SIZE = 5
+EDGE_SIZE = 6
 IMG_SPACE = 120
 XSPACE = 35 * EDGE_SIZE
 YSPACE = 60
@@ -176,8 +176,24 @@ class GameBoard:
 
 
             self.GamePlay.update_board(x_new, y_new)
-            self.GamePlay.make_history(self.x, self.y, self.x2, self.y2)  # Need to make remove_history mechanism
-            print(self.GamePlay.get_history())
+        # self.GamePlay.make_history(self.x, self.y, self.x2, self.y2)  # Need to make remove_history mechanism
+        print(self.GamePlay.get_history())
+
+    def show_score(self):
+        player0, player1 = self.GamePlay.count_total_score()
+        l = tk.Label(self.frame, text="Yellow\nscore:\n%d" % player0)
+        l.config(font=("Courier", 25))
+        l.place(anchor=tk.NW, x=XSPACE/4, y=YSPACE + (EDGE_SIZE - 1) * IMG_SPACE /2)
+        l = tk.Label(self.frame, text="Blue\nscore:\n%d" % player1)
+        l.config(font=("Courier", 25))
+        l.place(anchor=tk.NW, x=XSPACE + (EDGE_SIZE) * IMG_SPACE, y=YSPACE + (EDGE_SIZE - 1) * IMG_SPACE / 2)
+
+    def show_gameover(self):
+        won_player = self.GamePlay.who_won()
+        l = tk.Label(self.frame, text=" GAME OVER! \n"+won_player+" WON")
+        l.config(font=("Courier", 40))
+        l.place(anchor=tk.NW, x=XSPACE + (EDGE_SIZE - 1)/4 * IMG_SPACE,
+                y=YSPACE + (EDGE_SIZE - 1) * IMG_SPACE / 2)
 
     def on_click(self, event):
         if event.widget.image == self.blank:
@@ -203,6 +219,10 @@ class GameBoard:
                         # self.board[y2][x2] = self.board[y][x]
                         # self.board[y][x] = -1
                 self.GamePlay.show_board()
+                self.show_score()
+                if self.GamePlay.is_game_complete():
+                    print("Game Over!")
+                    self.show_gameover()
             return
 
         # # Doesnt work but detect location and turn
@@ -255,8 +275,9 @@ class GameBoard:
 
         # x, y, z = self.get_coordinates(event.widget)
         # print(x, y, z)
-        # if is_game_complete():
-        #     self.quit()
+        if self.GamePlay.is_game_complete():
+            print("Game Over!")
+            self.quit()
         print(self.GamePlay.get_history())
 
         self.GamePlay.turn = (self.GamePlay.turn + 1) % 2

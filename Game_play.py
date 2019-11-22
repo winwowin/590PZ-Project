@@ -29,19 +29,18 @@ class GamePlay(object):
         self.history = []
         if board is None:
             self.board = [[-1 for y in range(self.EDGE_SIZE)] for x in range(self.EDGE_SIZE)]
+            self.init_board()
+
         else:
             self.board = board.copy()
         if score is None:
             self.score = 0, 0
         else:
             self.score = self.count_total_score()
-        self.init_board()
         self.turn = turn
-        self.game_complete = 0
+        # self.game_complete = 0
         self.num_player = num_player
         # self.GameBoard = Worawich_590PZ_spot.GameBoard(Worawich_590PZ_spot.frame)
-
-
 
 
     def show_board(self):
@@ -59,10 +58,17 @@ class GamePlay(object):
     #     GamePlay.__init__.board = [[-1 for y in range(self.EDGE_SIZE)] for x in range(self.EDGE_SIZE)]
 
     def is_game_complete(self) -> bool:
+        print("Check completion")
+        if self.count_total_score()[0] == 0 or self.count_total_score()[1] == 0:
+            print("DEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
+            return True
         for j in self.board:
             for i in j:
                 if i == -1:
+                    print("NOT COMPLETEE", self.board)
                     return False
+        print("DEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
+
         return True
 
     def is_empty_spot(self, x, y):
@@ -180,25 +186,8 @@ class GamePlay(object):
         elif (x2, y2) in self.get_empty_jump(x, y):
             return 'jump'
 
-    def is_move_syntactic(self) -> bool:
-        pass
-
-    def is_location_valid(self) -> bool:
-        ''' Doe not applied since it's on click, which is always valid. '''
-        return True
-
     def get_game_state(self):
         return self.turn
-
-    # def init_game(self, size: int):
-    #     pass
-
-    '''
-    hold for later
-
-    def decide_move():
-        pass
-    '''
 
     def get_history(self):
         return self.history
@@ -225,17 +214,7 @@ class GamePlay(object):
         elif GamePlay().turn == 0:
             return "blue"
 
-    # def num_player(self):
-    #     pass
-
-    # def current_lo(self):
-    #     pass
-
     def current_turn(self):
-        # if self.turn == 0:
-        #     return '0'
-        # else:
-        #     return '1'
         return self.turn
 
     def whose_turn(self):
@@ -244,20 +223,35 @@ class GamePlay(object):
         else:
             return "yellow"
 
-    def make_move(self, x, y, x2, y2):
+    def make_move(self, x, y, x2, y2, turn=None):
+
+        # if turn is None:
+        #     turn = self.turn
+        # else:
+        #     turn = turn
+        # print(self.last_move)
         if self.picking_the_piece_legal(x, y):
             if self.moving_the_piece_legal(x, y, x2, y2):
+                self.make_history(x, y, x2, y2)
+                self.last_move = [x, y, x2, y2]
+                print("Moving: ", x, y, x2, y2)
+                # self.last_move = [x, y, x2, y2]
+                # print(self.get_history())
                 if self.determine_move_type(x, y, x2, y2) == 'walk':
                     self.board[y2][x2] = self.board[y][x]
                 elif self.determine_move_type(x, y, x2, y2) == 'jump':
                     self.board[y2][x2] = self.board[y][x]
                     self.board[y][x] = -1
-                self.make_history(x, y, x2, y2)
+        self.score = self.count_total_score()
         self.turn = (self.turn + 1) % 2
 
     def copy_move(self, move):
+        print("Copy move: ", move)
         b = self.copy()
+        print("Cloned board: ", b.board)
         b.make_move(move[0], move[1], move[2], move[3])
+        print("Cloned board moved: ", b.board)
+        # b.last_move = move
         return b
 
     def copy(self):
@@ -293,11 +287,17 @@ class GamePlay(object):
                     oppo_list.append((x + (i - 1) - lower_offset_x, y + (j - 1) - lower_offset_y))
         return oppo_list
 
-    def get_possible_move(self):
+    def get_possible_move(self, turn=None):
+
+        if turn is None:
+            turn = self.turn
+        else:
+            turn = turn
+
         move_list = []
         for i in range(self.EDGE_SIZE): # x
             for j in range(self.EDGE_SIZE): # y
-                if self.board[j][i] == self.turn:
+                if self.board[j][i] == turn:
                     movable = self.get_empty_around(i, j)
                     for move in movable:
                         move_list.append([i, j, move[0], move[1]])
@@ -316,9 +316,18 @@ class GamePlay(object):
             player0 += self.board[row].count(0)
         return player0
 
+    def who_won(self):
+        print("WHO WONNNNNNNNNNNNNN??????")
+        if self.count_total_score().index(max(self.count_total_score())) == 0:
+            return "Yellow"
+        else:
+            return "Blue"  # Need to change to color variable
+
+
     def get_last_move(self):
         # return self.GameBoard.x, self.GameBoard.y, self.GameBoard.x2, self.GameBoard.y2
-        return self.history
+        print("Last move:", self.history[-1])
+        return self.history[-1]
 
 if __name__ == '__main__':
     game = GamePlay(5)
@@ -352,25 +361,49 @@ if __name__ == '__main__':
     # print(game.get_last_move())
 
     import random
-    while not game.is_game_complete():
-        game.show_board()
-        ran_move = random.choice(game.get_possible_move())
-        game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3])
-        print("***************************")
-    print("Game over.\nBoard:")
-    game.show_board()
-    print("\nPlayer 0:", game.count_total_score()[0], "\nPlayer 1:", game.count_total_score()[1], )
-
-
-    # AI = AI.AI()
     # while not game.is_game_complete():
-    #     AI.move()
+    #     game.show_board()
+    #     ran_move = random.choice(game.get_possible_move())
+    #     game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3])
+    #     print(game.get_history())
+    #     print(game.get_last_move())
     #     print("***************************")
     # print("Game over.\nBoard:")
     # game.show_board()
-    # print("\nPlayer 0:", game.count_total_score()[0], "\nPlayer 1:", game.count_total_score()[1],)
+    # print("\nPlayer 0:", game.count_total_score()[0], "\nPlayer 1:", game.count_total_score()[1], )
+
+    import argparse
+
+    parser = argparse.ArgumentParser(description='4-connect')
+    parser.add_argument('--player', type=int, default=0, help='Player to play with - 0 starts.')
+    parser.add_argument('--depth', type=int, default=5, help='AI lookahead depth')
+    args = parser.parse_args()
+
+    AI = AI.AI(game,  player=((args.player + 1) % 2), max_depth=args.depth)
+    while not game.is_game_complete():
+        if args.player == 0:
+            print(args.player)
+            print("RANNNNNNNNNDOMMMMMMMMM")
+            ran_move = random.choice(game.get_possible_move())
+            game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3], args.player)
+            args.player = (args.player + 1) % 2
+
+        else:
+            print(args.player)
+            print("AIIIIIIIIIIIIII")
+            AI.move(args.player)
+            args.player = (args.player + 1) % 2
+
+        print(game.is_game_complete(), "*#########################################################***")
+
+        print(args.player)
+        # game.tuen = (game.turn + 1) % 2
+        print("***************************")
+    print("Game over.\nBoard:")
+    game.show_board()
+    print("\nPlayer 0:", game.count_total_score()[0], "\nPlayer 1:", game.count_total_score()[1],)
+    # #
     #
     #
-    #
-    # game.copy_move([0, 4, 0, 2])
+    game.copy_move([0, 4, 0, 2])
 
