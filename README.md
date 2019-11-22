@@ -14,6 +14,7 @@ I use Tkinter to make the board by using a grid of spot pictures (simply Paint i
 
 
 Gameplay pictures:<br>
-![Board1](https://github.com/winwowin/590PZ-Project/blob/master/game1.png?raw=true | width=50)
-
-![Board2](https://github.com/winwowin/590PZ-Project/blob/master/game2.png?raw=true =250x250)
+![Board1](https://github.com/winwowin/590PZ-Project/blob/master/game1.png?raw=true)
+![Board2](https://github.com/winwowin/590PZ-Project/blob/master/game2.png?raw=true)
+<img src="https://github.com/winwowin/590PZ-Project/blob/master/game1.png?raw=true" width="70%" height="70%" />
+<img src="https://github.com/winwowin/590PZ-Project/blob/master/game2.png?raw=true" width="70%" height="70%" />
