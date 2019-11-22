@@ -3,10 +3,11 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/Game_play.py" line="240" />
     <bookmark url="file://$PROJECT_DIR$/Worawich_590PZ_spot.py" line="183" />
+    <bookmark url="file://$PROJECT_DIR$/README.md" line="15" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08407624-7556-4633-b2eb-e711adf3dc9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Worawich_590PZ_spot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Worawich_590PZ_spot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,19 +22,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="289">
-                <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <first_editor relative-caret-position="323">
+                <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Worawich_590PZ_spot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
@@ -106,15 +107,15 @@
       <find>print</find>
       <find>get_hi</find>
       <find>make</find>
-      <find>make_history</find>
       <find>show_b</find>
+      <find>make_history</find>
     </findStrings>
     <replaceStrings>
       <replace>blue</replace>
       <replace>upper_offset_y</replace>
       <replace>upper_offset_x</replace>
-      <replace>make_history</replace>
       <replace>Gameplay</replace>
+      <replace>make_history</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -123,10 +124,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/AI.py" />
         <option value="$PROJECT_DIR$/Game_play.py" />
         <option value="$PROJECT_DIR$/Worawich_590PZ_spot.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -270,12 +271,12 @@
       <option name="presentableId" value="Default" />
       <updated>1573796120850</updated>
       <workItem from="1573796122707" duration="2377000" />
-      <workItem from="1573937164374" duration="75003000" />
+      <workItem from="1573937164374" duration="75470000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77380000" />
+    <option name="totallyTimeSpent" value="77847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -351,16 +352,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="289">
-            <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -400,6 +391,16 @@
             <element signature="e#465#485#0" expanded="true" />
             <marker date="1574393673230" expanded="true" signature="4715:4724" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="323">
+            <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -13,5 +13,7 @@ Approach
 I use Tkinter to make the board by using a grid of spot pictures (simply Paint it). There are 5 difference colors of spot pictures, red, blue, green, yellow, and empty spot, which I swap them on click. As the click function triggered, it also returns the coordinate of the TK windows and transposes back to x, y coordinate to use with the logical gameplay functions. The UI of the board is done and working properly. There are many functions to transpose back and forward between the UI and the logical coordinates. Gameplay part still need to be implemented.
 
 
+Gameplay pictures:<br>
+![Board1](https://github.com/winwowin/590PZ-Project/blob/master/game1.png?raw=true | width=50)
 
-
+![Board2](https://github.com/winwowin/590PZ-Project/blob/master/game2.png?raw=true =250x250)
