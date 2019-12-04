@@ -18,7 +18,7 @@ __status__ = "Prototype"
 
 import tkinter as tk
 import Worawich_590PZ_spot
-import AI
+import spot_AI
 
 """ YEEEEEEEEELLOOOOOOOOOWW TUUUUUUUUUURNNN ISSSSS 0000000000000000000000"""
 
@@ -224,6 +224,9 @@ class GamePlay(object):
             return "yellow"
 
     def make_move(self, x, y, x2, y2, turn=None):
+        self.make_history(x, y, x2, y2)
+        # self.last_move = [x, y, x2, y2]
+        # print("Movinggggggggggggggggggg ", x, y, x2, y2)
 
         # if turn is None:
         #     turn = self.turn
@@ -232,8 +235,6 @@ class GamePlay(object):
         # print(self.last_move)
         if self.picking_the_piece_legal(x, y):
             if self.moving_the_piece_legal(x, y, x2, y2):
-                self.make_history(x, y, x2, y2)
-                self.last_move = [x, y, x2, y2]
                 print("Moving: ", x, y, x2, y2)
                 # self.last_move = [x, y, x2, y2]
                 # print(self.get_history())
@@ -303,8 +304,15 @@ class GamePlay(object):
                         move_list.append([i, j, move[0], move[1]])
         return move_list
 
-    def count_total_score(self):
+    def count_total_score(self, board=None):
         player0, player1 = 0, 0
+
+        if board is not None:
+            for row in range(self.EDGE_SIZE):
+                player0 += board[row].count(0)
+                player1 += board[row].count(1)
+            return player0, player1
+
         for row in range(self.EDGE_SIZE):
             player0 += self.board[row].count(0)
             player1 += self.board[row].count(1)
@@ -328,6 +336,57 @@ class GamePlay(object):
         # return self.GameBoard.x, self.GameBoard.y, self.GameBoard.x2, self.GameBoard.y2
         print("Last move:", self.history[-1])
         return self.history[-1]
+
+import argparse
+import random
+import tkinter as tk
+import Worawich_590PZ_spot
+import spot_AI
+
+def run_random():
+    while not game.is_game_complete():
+        game.show_board()
+        pos_move = game.get_possible_move()
+        ran_move = random.choice(pos_move)
+        game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3])
+        print(game.get_history())
+        print(game.get_last_move())
+        print("***************************")
+    print("Game over.\nBoard:")
+    game.show_board()
+    print("\nPlayer 0:", game.count_total_score()[0], "\nPlayer 1:", game.count_total_score()[1], )
+
+
+def run_ai():
+
+    parser = argparse.ArgumentParser(description='4-connect')
+    parser.add_argument('--player', type=int, default=0, help='Player to play with - 0 starts.')
+    parser.add_argument('--depth', type=int, default=5, help='AI lookahead depth')
+    args = parser.parse_args()
+
+
+
+    AI = spot_AI.AI(game, player=((args.player + 1) % 2), max_depth=args.depth)
+    while not game.is_game_complete():
+        if args.player == 0:
+            print(args.player)
+            print("RANNNNNNNNNDOMMMMMMMMM")
+            ran_move = random.choice(game.get_possible_move())
+            game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3], args.player)
+            args.player = (args.player + 1) % 2
+
+        else:
+            print(args.player)
+            print("AIIIIIIIIIIIIII")
+            AI.move(args.player)
+            args.player = (args.player + 1) % 2
+
+        print(game.is_game_complete(), "*#########################################################***")
+
+        print(args.player)
+        # game.tuen = (game.turn + 1) % 2
+        print("***************************")
+
 
 if __name__ == '__main__':
     game = GamePlay(5)
@@ -360,45 +419,40 @@ if __name__ == '__main__':
     # print(game.count_total_score())
     # print(game.get_last_move())
 
-    import random
+
+
+
+    run_ai()
+    # run_random()
+
+
+
+
+    # AI = AI.AI(game, player=((args.player + 1) % 2), max_depth=args.depth)
     # while not game.is_game_complete():
-    #     game.show_board()
-    #     ran_move = random.choice(game.get_possible_move())
-    #     game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3])
-    #     print(game.get_history())
-    #     print(game.get_last_move())
+    #     if args.player == 0:
+    #         print(args.player)
+    #         print("AI 11111111111")
+    #         AI.dumb_ai_move(args.player)
+    #         args.player = (args.player + 1) % 2
+    #
+    #     else:
+    #         print(args.player)
+    #         print("AI 22222222222222")
+    #         AI.dumb_ai_move(args.player)
+    #         args.player = (args.player + 1) % 2
+    #
+    #     print(game.is_game_complete(), "*#########################################################***")
+    #
+    #     print(args.player)
+    #     # game.tuen = (game.turn + 1) % 2
     #     print("***************************")
-    # print("Game over.\nBoard:")
-    # game.show_board()
-    # print("\nPlayer 0:", game.count_total_score()[0], "\nPlayer 1:", game.count_total_score()[1], )
 
-    import argparse
 
-    parser = argparse.ArgumentParser(description='4-connect')
-    parser.add_argument('--player', type=int, default=0, help='Player to play with - 0 starts.')
-    parser.add_argument('--depth', type=int, default=5, help='AI lookahead depth')
-    args = parser.parse_args()
 
-    AI = AI.AI(game,  player=((args.player + 1) % 2), max_depth=args.depth)
-    while not game.is_game_complete():
-        if args.player == 0:
-            print(args.player)
-            print("RANNNNNNNNNDOMMMMMMMMM")
-            ran_move = random.choice(game.get_possible_move())
-            game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3], args.player)
-            args.player = (args.player + 1) % 2
 
-        else:
-            print(args.player)
-            print("AIIIIIIIIIIIIII")
-            AI.move(args.player)
-            args.player = (args.player + 1) % 2
 
-        print(game.is_game_complete(), "*#########################################################***")
 
-        print(args.player)
-        # game.tuen = (game.turn + 1) % 2
-        print("***************************")
     print("Game over.\nBoard:")
     game.show_board()
     print("\nPlayer 0:", game.count_total_score()[0], "\nPlayer 1:", game.count_total_score()[1],)

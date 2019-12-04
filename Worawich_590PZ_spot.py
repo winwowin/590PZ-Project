@@ -145,7 +145,6 @@ class GameBoard:
         self.GamePlay.make_history(self.x, self.y, self.x2, self.y2)  # Need to make remove_history mechanism
         print(self.GamePlay.get_history())
 
-
     def invade_color(self, widget):
         invade_list = self.GamePlay.invade(self.x2, self.y2)
         for oppo_location in invade_list:
@@ -292,7 +291,7 @@ class GameWindow:
 
 if __name__ == '__main__':
     window = tk.Tk()
-    window.wm_title("TetraHex")
+    window.wm_title("Spot")
     GameWindow(window)
     window.mainloop()
 
