@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Game_play.py" line="241" />
+    <bookmark url="file://$PROJECT_DIR$/Game_play.py" line="245" />
     <bookmark url="file://$PROJECT_DIR$/Worawich_590PZ_spot.py" line="183" />
     <bookmark url="file://$PROJECT_DIR$/README.md" line="15" />
+    <bookmark url="file://$PROJECT_DIR$/Game_play.py" line="436" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08407624-7556-4633-b2eb-e711adf3dc9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/spot_AI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_play.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Worawich_590PZ_spot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Worawich_590PZ_spot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spot_AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/spot_AI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/590PZ_Project$AI.coverage" NAME="AI Coverage Results" MODIFIED="1575486483143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/590PZ_Project$Worawich_590PZ_spot.coverage" NAME="Worawich_590PZ_spot Coverage Results" MODIFIED="1574444181466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/590PZ_Project$Game_play.coverage" NAME="Game_play Coverage Results" MODIFIED="1575495478056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/590PZ_Project$Game_play.coverage" NAME="Game_play Coverage Results" MODIFIED="1575548158753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -40,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Worawich_590PZ_spot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="396">
               <caret line="164" column="40" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
               <folding>
                 <marker date="1575486340864" expanded="true" signature="4715:4724" ph="..." />
@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game_play.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="378" column="30" lean-forward="true" selection-start-line="378" selection-start-column="30" selection-end-line="378" selection-end-column="30" />
+            <state relative-caret-position="296">
+              <caret line="475" column="18" lean-forward="true" selection-start-line="475" selection-start-column="18" selection-end-line="475" selection-end-column="18" />
               <folding>
                 <element signature="e#417#437#0" expanded="true" />
               </folding>
@@ -64,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="669" column="18" selection-start-line="669" selection-start-column="18" selection-end-line="669" selection-end-column="18" />
+            <state relative-caret-position="146">
+              <caret line="322" selection-start-line="322" selection-end-line="322" />
             </state>
           </provider>
         </entry>
@@ -73,8 +73,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spot_AI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="1139">
+              <caret line="163" column="51" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="51" />
+              <folding>
+                <element signature="e#549#575#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,11 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_last</find>
-      <find>negamax</find>
-      <find>max_depth</find>
-      <find>self.y</find>
-      <find>show</find>
       <find>game_complete</find>
       <find>depth</find>
       <find>history</find>
@@ -118,8 +116,13 @@
       <find>hex</find>
       <find>copy</find>
       <find>player 0</find>
-      <find>make_mo</find>
       <find>board</find>
+      <find>make_mo</find>
+      <find>gameplay.board</find>
+      <find>get_empty_around</find>
+      <find>turn</find>
+      <find>move</find>
+      <find>Check completion</find>
     </findStrings>
     <replaceStrings>
       <replace>blue</replace>
@@ -127,6 +130,7 @@
       <replace>upper_offset_x</replace>
       <replace>Gameplay</replace>
       <replace>make_history</replace>
+      <replace>self.move</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -138,22 +142,22 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Worawich_590PZ_spot.py" />
         <option value="$PROJECT_DIR$/AI.py" />
+        <option value="$PROJECT_DIR$/spot_AI.py" />
         <option value="$PROJECT_DIR$/Game_play.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1098" />
+    <option name="x" value="-1681" />
+    <option name="y" value="-11" />
+    <option name="width" value="1551" />
+    <option name="height" value="879" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,6 +169,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,24 +284,25 @@
       <workItem from="1573796122707" duration="2377000" />
       <workItem from="1573937164374" duration="75956000" />
       <workItem from="1574407048670" duration="8866000" />
-      <workItem from="1575485894269" duration="5844000" />
+      <workItem from="1575485894269" duration="7083000" />
+      <workItem from="1575511644946" duration="9539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93043000" />
+    <option name="totallyTimeSpent" value="103821000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49499" visible="true" weight="0.24966443" />
-      <window_info id="Structure" order="1" sideWeight="0.50501" side_tool="true" visible="true" weight="0.24966443" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4916318" visible="true" weight="0.20095949" />
+      <window_info id="Structure" order="1" sideWeight="0.5083682" side_tool="true" visible="true" weight="0.20095949" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29320112" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43201134" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48212352" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4734561" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -358,23 +364,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/spot_AI.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="20" />
+          <line>148</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Game_play.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/spot_AI.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/spot_AI.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/spot_AI.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/spot_AI.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="moves_to_try" />
+        <watch expression="moves_to_try" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>moves_to_try</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
         <expression-string>(player+1)%2</expression-string>
@@ -403,14 +431,14 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="669" column="18" selection-start-line="669" selection-start-column="18" selection-end-line="669" selection-end-column="18" />
+        <state relative-caret-position="146">
+          <caret line="322" selection-start-line="322" selection-end-line="322" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Worawich_590PZ_spot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="396">
           <caret line="164" column="40" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
           <folding>
             <marker date="1575486340864" expanded="true" signature="4715:4724" ph="..." />
@@ -420,15 +448,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spot_AI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="1139">
+          <caret line="163" column="51" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="51" />
+          <folding>
+            <element signature="e#549#575#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Game_play.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="378" column="30" lean-forward="true" selection-start-line="378" selection-start-column="30" selection-end-line="378" selection-end-column="30" />
+        <state relative-caret-position="296">
+          <caret line="475" column="18" lean-forward="true" selection-start-line="475" selection-start-column="18" selection-end-line="475" selection-end-column="18" />
           <folding>
             <element signature="e#417#437#0" expanded="true" />
           </folding>

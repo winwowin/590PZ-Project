@@ -135,8 +135,12 @@ class GamePlay(object):
             empty_list.remove(space)
         return empty_list
 
-    def get_empty_around(self, x, y):
+    def get_empty_around(self, x, y, board=None):
         """Same with above but contain both 3x3 and 5x5 space. AKA all legal move"""
+        if board is None:
+            board = self.board
+        else:
+            board = board
         empty_list = []
 
         #  Offset calculation system, to find the jumping region without going over boarder edge.
@@ -160,7 +164,7 @@ class GamePlay(object):
         # Loop through the 5x5 jumping region minus the edge offset
         for i in range(5 - upper_offset_x + lower_offset_x):
             for j in range(5 - upper_offset_y + lower_offset_y):
-                if self.board[y+(j-2)-lower_offset_y][x+(i-2)-lower_offset_x] == -1:
+                if board[y+(j-2)-lower_offset_y][x+(i-2)-lower_offset_x] == -1:
                     empty_list.append((x+(i-2)-lower_offset_x, y+(j-2)-lower_offset_y))
         return empty_list
 
@@ -288,7 +292,11 @@ class GamePlay(object):
                     oppo_list.append((x + (i - 1) - lower_offset_x, y + (j - 1) - lower_offset_y))
         return oppo_list
 
-    def get_possible_move(self, turn=None):
+    def get_possible_move(self, turn=None, board=None):
+        if board is None:
+            board = self.board
+        else:
+            board = board
 
         if turn is None:
             turn = self.turn
@@ -298,8 +306,8 @@ class GamePlay(object):
         move_list = []
         for i in range(self.EDGE_SIZE): # x
             for j in range(self.EDGE_SIZE): # y
-                if self.board[j][i] == turn:
-                    movable = self.get_empty_around(i, j)
+                if board[j][i] == turn:
+                    movable = self.get_empty_around(i, j, board)
                     for move in movable:
                         move_list.append([i, j, move[0], move[1]])
         return move_list
@@ -364,8 +372,6 @@ def run_ai():
     parser.add_argument('--depth', type=int, default=5, help='AI lookahead depth')
     args = parser.parse_args()
 
-
-
     AI = spot_AI.AI(game, player=((args.player + 1) % 2), max_depth=args.depth)
     while not game.is_game_complete():
         if args.player == 0:
@@ -388,10 +394,88 @@ def run_ai():
         print("***************************")
 
 
+from sys import float_info
+
+
+def run_max_ai():
+    turn = 0
+    while not game.is_game_complete():
+        game.show_board()
+        if turn == 0:
+            ran_move = random.choice(game.get_possible_move())
+            game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3], turn)
+            turn = (turn + 1) % 2
+        else:
+            best = (-float_info.max, None)
+
+            # ran_move = random.choice(game.get_possible_move())
+            for move in game.get_possible_move():
+                if game.count_total_score(game.copy_move(move).board)[turn] > best[0]:
+                    best = game.count_total_score(game.copy_move(move).board)[turn], move
+            game.make_move(best[1][0], best[1][1], best[1][2], best[1][3], turn)
+            turn = (turn + 1) % 2
+
+
+class sim_ai:
+    def __init__(self):
+        last_move = None
+
+
+    def run_simple_ai(self):
+        turn = 0
+        while not game.is_game_complete():
+            game.show_board()
+            if turn == 0:
+                ran_move = random.choice(game.get_possible_move())
+                game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3], turn)
+                turn = (turn + 1) % 2
+            else:
+                self.move_simple_ai(turn)
+                turn = (turn + 1) % 2
+
+
+    def move_simple_ai(self, turn):
+        best = self.simple_ai(game, 0, True, turn)
+        print("best", best)
+        game.make_move(best[1][0], best[1][1], best[1][2], best[1][3], turn)
+
+    def simple_ai(self, board, depth, maximizing_player, turn):
+        if self.last_move is not None:
+            if depth == 0 or game.is_game_complete():
+                return game.count_total_score(game.copy_move(self.last_move).board)[turn], self.last_move
+
+        if maximizing_player:
+            max_eval = -float_info.max
+            for self.move in game.get_possible_move(turn):
+                eval = self.simple_ai(game.copy_move(self.move), depth - 1, False, turn)
+                if eval[0] > max_eval:
+                    max_eval = eval
+                    self.last_move = self.move
+                # max_eval = max(max_eval, eval)
+            # turn = (turn + 1) % 2
+            return max_eval, self.move
+
+        else:
+            min_eval = float_info.max
+            for self.move in game.get_possible_move((turn + 1)% 2):
+                eval = self.simple_ai(game.copy_move(self.move), depth - 1, False, turn)
+                if eval[0] < min_eval:
+                    min_eval = eval
+                    self.last_move = self.move
+                min_eval = min(min_eval, eval)
+            # turn = (turn + 1) % 2
+            return min_eval, self.move
+
 if __name__ == '__main__':
     game = GamePlay(5)
     game.init_board()
     game.show_board()
+
+    run_ai()  # Look at get_possible_move and duplicated board
+    # run_random()
+    # run_max_ai()
+    # sim_ai().run_simple_ai()
+
     # print(game.is_game_complete())
     # print(game.is_empty_spot(2, 3))
 
@@ -422,8 +506,6 @@ if __name__ == '__main__':
 
 
 
-    run_ai()
-    # run_random()
 
 
 
@@ -459,5 +541,5 @@ if __name__ == '__main__':
     # #
     #
     #
-    game.copy_move([0, 4, 0, 2])
+    # game.copy_move([0, 4, 0, 2])
 

@@ -49,13 +49,14 @@ class AI:
             self.board = Game_play.GamePlay().board
         else:
             self.board = board
+            # self.Gameplay.board = board
         self.max_depth = max_depth
         if player is None:
             self.player = Game_play.GamePlay().turn
         else:
             self.player = player
         self.y = 0.9
-        self.last_move = 0, 0, 0, 0
+        self.last_move = None
 
     # Psudo code from https://www.youtube.com/watch?v=l-hh51ncgDI
     #     def minimax(self, position, depth, alphabeta, maximizing_player):
@@ -130,10 +131,20 @@ class AI:
             return self.utility(Gameplay, player)
         else:
             if player:
+                # Gameplay = Game_play.GamePlay(board=self.board.board)
 
                 v = (-float_info.max, None)
+                Gameplay.board
+                # if self.last_move is None:
+                #     moves_to_try = Gameplay.get_possible_move(player)
+                # else:
+                #     test = self.board.board
+                #     game = Game_play.GamePlay(board=self.board.board).get_possible_move(player, self.board.board)
+                #     moves_to_try = Game_play.GamePlay(board=self.board.board).get_possible_move(player, self.board.board)
+                #     # moves_to_try = Game_play.GamePlay(board=self.board, turn=self.turn, score=self.score).get_possible_move(player)
 
-                moves_to_try = Gameplay.get_possible_move(player)
+                moves_to_try = Gameplay.get_possible_move(player, Gameplay.board)
+
                 for m in moves_to_try:
                     self.last_move = m
 
@@ -146,6 +157,7 @@ class AI:
                     alpha = max(alpha, score)
                     if alpha >= beta:
                         break
+                    test2 = Gameplay.board
                 return v
             else:
                 v = (-float_info.max, None)
