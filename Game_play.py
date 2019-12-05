@@ -19,6 +19,7 @@ __status__ = "Prototype"
 import tkinter as tk
 import Worawich_590PZ_spot
 import spot_AI
+from copy import deepcopy
 
 """ YEEEEEEEEELLOOOOOOOOOWW TUUUUUUUUUURNNN ISSSSS 0000000000000000000000"""
 
@@ -32,7 +33,9 @@ class GamePlay(object):
             self.init_board()
 
         else:
-            self.board = board.copy()
+            if not isinstance(board, list):
+                raise (ValueError)
+            self.board = deepcopy(board)
         if score is None:
             self.score = 0, 0
         else:
@@ -140,6 +143,8 @@ class GamePlay(object):
         if board is None:
             board = self.board
         else:
+            if not isinstance(board, list):
+                raise (ValueError)
             board = board
         empty_list = []
 
@@ -252,7 +257,7 @@ class GamePlay(object):
 
     def copy_move(self, move):
         print("Copy move: ", move)
-        b = self.copy()
+        b = deepcopy(self)
         print("Cloned board: ", b.board)
         b.make_move(move[0], move[1], move[2], move[3])
         print("Cloned board moved: ", b.board)
@@ -293,9 +298,12 @@ class GamePlay(object):
         return oppo_list
 
     def get_possible_move(self, turn=None, board=None):
+
         if board is None:
             board = self.board
         else:
+            if not isinstance(board, list):
+                raise (ValueError)
             board = board
 
         if turn is None:
@@ -313,9 +321,12 @@ class GamePlay(object):
         return move_list
 
     def count_total_score(self, board=None):
+
         player0, player1 = 0, 0
 
         if board is not None:
+            if not isinstance(board, list):
+                raise (ValueError)
             for row in range(self.EDGE_SIZE):
                 player0 += board[row].count(0)
                 player1 += board[row].count(1)
@@ -372,19 +383,25 @@ def run_ai():
     parser.add_argument('--depth', type=int, default=5, help='AI lookahead depth')
     args = parser.parse_args()
 
-    AI = spot_AI.AI(game, player=((args.player + 1) % 2), max_depth=args.depth)
+    AI1 = spot_AI.AI(game.board, player=((args.player + 1) % 2), max_depth=2)
+    AI2 = spot_AI.AI(game.board, player=1, max_depth=2)
+
     while not game.is_game_complete():
         if args.player == 0:
             print(args.player)
             print("RANNNNNNNNNDOMMMMMMMMM")
             ran_move = random.choice(game.get_possible_move())
             game.make_move(ran_move[0], ran_move[1], ran_move[2], ran_move[3], args.player)
+            # best = AI1.move(args.player)
+            # game.make_move(best[1][0], best[1][1], best[1][2], best[1][3], args.player)
             args.player = (args.player + 1) % 2
 
         else:
             print(args.player)
             print("AIIIIIIIIIIIIII")
-            AI.move(args.player)
+            # AI.move(args.player)
+            best = AI2.move(args.player)
+            game.make_move(best[1][0], best[1][1], best[1][2], best[1][3], args.player)
             args.player = (args.player + 1) % 2
 
         print(game.is_game_complete(), "*#########################################################***")

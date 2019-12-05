@@ -48,6 +48,8 @@ class AI:
         if board is None:
             self.board = Game_play.GamePlay().board
         else:
+            if not isinstance(board, list):
+                raise (ValueError)
             self.board = board
             # self.Gameplay.board = board
         self.max_depth = max_depth
@@ -86,44 +88,45 @@ class AI:
     # initial call
     # minimax(currentPosition, 3, -INFINITY, INFINITY, true)
 
-    def dumb_ai_move(self, player=None):
-        best = self.dumb(self.Gameplay, 1, True, self.player)
-        print('dumb_ai_move', best[1][0], best[1][1], best[1][2], best[1][3], self.player)
-        self.Gameplay.make_move(best[1][0], best[1][1], best[1][2], best[1][3], self.player)
-
-    def dumb(self, Gameplay, depth, maximizing_player, turn):
-        # if self.terminal(Gameplay, depth):
-        if depth == 0 or self.Gameplay.is_game_complete():
-            return self.Gameplay.count_total_score(Gameplay.board), self.last_move
-
-        if maximizing_player:
-            max_eval = -float_info.max
-            for move in Gameplay.get_possible_move(turn):
-                eval = self.dumb(Gameplay.copy_move(move), depth - 1, False, turn)
-                if eval[0] > max_eval:
-                    max_eval = eval
-                    self.last_move = move
-                # max_eval = max(max_eval, eval)
-            return max_eval, move
-
-        else:
-            min_eval = float_info.max
-            print("////////////////////////////////////////////////////////////////////\n\n\n\n\n\n",
-                  Gameplay.get_possible_move((turn + 1)% 2),
-                  '\n\n\n\n\n\n\n\n\n')
-            for move in Gameplay.get_possible_move((turn + 1)% 2):
-                eval = self.dumb(move, depth - 1, False, turn)
-                if eval[0] < min_eval:
-                    min_eval = eval
-                    self.last_move = move
-                min_eval = min(min_eval, eval)
-            return min_eval, move
+    # def dumb_ai_move(self, player=None):
+    #     best = self.dumb(self.Gameplay, 1, True, self.player)
+    #     print('dumb_ai_move', best[1][0], best[1][1], best[1][2], best[1][3], self.player)
+    #     self.Gameplay.make_move(best[1][0], best[1][1], best[1][2], best[1][3], self.player)
+    #
+    # def dumb(self, Gameplay, depth, maximizing_player, turn):
+    #     # if self.terminal(Gameplay, depth):
+    #     if depth == 0 or self.Gameplay.is_game_complete():
+    #         return self.Gameplay.count_total_score(Gameplay.board), self.last_move
+    #
+    #     if maximizing_player:
+    #         max_eval = -float_info.max
+    #         for move in Gameplay.get_possible_move(turn):
+    #             eval = self.dumb(Gameplay.copy_move(move), depth - 1, False, turn)
+    #             if eval[0] > max_eval:
+    #                 max_eval = eval
+    #                 self.last_move = move
+    #             # max_eval = max(max_eval, eval)
+    #         return max_eval, move
+    #
+    #     else:
+    #         min_eval = float_info.max
+    #         print("////////////////////////////////////////////////////////////////////\n\n\n\n\n\n",
+    #               Gameplay.get_possible_move((turn + 1)% 2),
+    #               '\n\n\n\n\n\n\n\n\n')
+    #         for move in Gameplay.get_possible_move((turn + 1)% 2):
+    #             eval = self.dumb(move, depth - 1, False, turn)
+    #             if eval[0] < min_eval:
+    #                 min_eval = eval
+    #                 self.last_move = move
+    #             min_eval = min(min_eval, eval)
+    #         return min_eval, move
 
     def move(self, player=None):
         '''Take the move that optimizes this players outcome.'''
         best = self.negamax(self.Gameplay, -float_info.max, float_info.max, 0, self.player)
         print("best", best)
         self.Gameplay.make_move(best[1][0], best[1][1], best[1][2], best[1][3], self.player)
+        return best
 
     def negamax(self, Gameplay, alpha, beta, depth, player):
         '''Recursively optimize the moves assuming the opponent plays optimal.'''
@@ -131,21 +134,24 @@ class AI:
             return self.utility(Gameplay, player)
         else:
             if player:
-                # Gameplay = Game_play.GamePlay(board=self.board.board)
+                # Gameplay = Game_play.GamePlay(board=self.board)
 
                 v = (-float_info.max, None)
                 Gameplay.board
                 # if self.last_move is None:
                 #     moves_to_try = Gameplay.get_possible_move(player)
                 # else:
-                #     test = self.board.board
-                #     game = Game_play.GamePlay(board=self.board.board).get_possible_move(player, self.board.board)
-                #     moves_to_try = Game_play.GamePlay(board=self.board.board).get_possible_move(player, self.board.board)
+                #     test = self.board
+                #     game = Game_play.GamePlay(board=self.board).get_possible_move(player, self.board)
+                #     moves_to_try = Game_play.GamePlay(board=self.board).get_possible_move(player, self.board)
                 #     # moves_to_try = Game_play.GamePlay(board=self.board, turn=self.turn, score=self.score).get_possible_move(player)
 
+                if not isinstance(Gameplay.board, list):
+                    raise (ValueError)
                 moves_to_try = Gameplay.get_possible_move(player, Gameplay.board)
 
                 for m in moves_to_try:
+
                     self.last_move = m
 
                     score, move = self.negamax(Gameplay.copy_move(m), -beta, -alpha, depth + 1, (player+1)%2)
@@ -160,13 +166,16 @@ class AI:
                     test2 = Gameplay.board
                 return v
             else:
-                v = (-float_info.max, None)
+                v = (float_info.max, None)
                 for m in Gameplay.get_possible_move(player):
+                    self.last_move = m
+
                     score, move = self.negamax(Gameplay.copy_move(m), -beta, -alpha, depth + 1, (player + 1) % 2)
                     # self.last_move = m
                     score *= -1 * self.y ** depth
                     print("score", score, 'player', player, "depth", depth)
                     if score < v[0]:
+
                         v = (score, m)  # move
 
                     beta = min(beta, score)
@@ -183,7 +192,8 @@ class AI:
         '''Returns the utility score for the given player.'''
         print(Gameplay.get_last_move())
         print(self.last_move)
-        return (Gameplay.count_total_score()[player], Gameplay.get_last_move())
+        return (Gameplay.count_total_score()[player]/Gameplay.count_total_score()[(player + 1) % 2], Gameplay.get_last_move())
+        # return (Gameplay.count_total_score()[player], self.last_move)
 
 
 # if __name__ == '__main__':
