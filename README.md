@@ -36,7 +36,8 @@ The board will be a square from 5x5 and larger<br>
 
 ## Gameplay pictures:<br>
 For 5x5:<br>
-<img src="https://github.com/winwowin/590PZ-Project/blob/master/game1.png?raw=true" width="70%" height="70%" />
-For 7x7:<br>
+<img src="https://github.com/winwowin/590PZ-Project/blob/master/game1.png?raw=true" width="70%" height="70%" /><br><br>
 There will be the settings gui that let you adjust the board, number of players, and hardness. (Functions work but GUI under construction)<br>
+For 7x7:<br>
+
 <img src="https://github.com/winwowin/590PZ-Project/blob/master/game2.png?raw=true" width="70%" height="70%" />
