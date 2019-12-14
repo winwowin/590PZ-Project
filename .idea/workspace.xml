@@ -2,15 +2,13 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/Game_play.py" line="250" />
-    <bookmark url="file://$PROJECT_DIR$/Main_board.py" line="183" />
+    <bookmark url="file://$PROJECT_DIR$/Main_board.py" line="181" />
     <bookmark url="file://$PROJECT_DIR$/README.md" line="15" />
     <bookmark url="file://$PROJECT_DIR$/Game_play.py" line="453" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08407624-7556-4633-b2eb-e711adf3dc9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_play.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Worawich_590PZ_spot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_board.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +39,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main_board.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="323" lean-forward="true" selection-start-line="323" selection-end-line="323" />
+            <state relative-caret-position="-2788">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#417#437#0" expanded="true" />
-                <marker date="1576287725623" expanded="true" signature="4715:4724" ph="..." />
+                <marker date="1576288039696" expanded="true" signature="4702:4711" ph="..." />
               </folding>
             </state>
           </provider>
@@ -319,15 +317,15 @@
       <workItem from="1574407048670" duration="8866000" />
       <workItem from="1575485894269" duration="7083000" />
       <workItem from="1575511644946" duration="18078000" />
-      <workItem from="1576286316136" duration="1409000" />
+      <workItem from="1576286316136" duration="1709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113769000" />
+    <option name="totallyTimeSpent" value="114069000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49081802" visible="true" weight="0.20309168" />
@@ -486,11 +484,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main_board.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="323" lean-forward="true" selection-start-line="323" selection-end-line="323" />
+        <state relative-caret-position="-2788">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#417#437#0" expanded="true" />
-            <marker date="1576287725623" expanded="true" signature="4715:4724" ph="..." />
+            <marker date="1576288039696" expanded="true" signature="4702:4711" ph="..." />
           </folding>
         </state>
       </provider>

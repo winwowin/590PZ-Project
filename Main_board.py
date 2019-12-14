@@ -18,8 +18,6 @@ __status__ = "Prototype"
 
 import tkinter as tk
 import Game_play
-# import AI
-
 
 EDGE_SIZE = 5
 IMG_SPACE = 120
@@ -224,24 +222,6 @@ class GameBoard:
                     self.show_gameover()
             return
 
-        # # Doesnt work but detect location and turn
-        # if event.widget.image == self.yellow:
-        #     # print(self.GamePlay.whose_turn())
-        #
-        #     if self.GamePlay.turn == 0:
-        #         self.toggle_color(event.widget)
-        #     # self.toggle_color(event.widget)
-        #     self.GamePlay.turn = (self.GamePlay.turn + 1) % 2
-        #     return
-        # if event.widget.image == self.blue:
-        #     # print(self.GamePlay.whose_turn())
-        #     if self.GamePlay.turn == 1:
-        #         self.toggle_color(event.widget)
-        #     # self.toggle_color(event.widget)
-        #     self.GamePlay.turn = (self.GamePlay.turn + 1) % 2
-        #     return
-
-        # Working version but just switch color
         if event.widget.image == self.yellow:
             if self.click_num == 0:
                 self.x, self.y = self.get_coordinates(event.widget)
@@ -290,41 +270,6 @@ class GameWindow:
 
 
 if __name__ == '__main__':
-    # from modulefinder import ModuleFinder
-    #
-    # f = ModuleFinder()
-    # # Run the main script
-    # f.run_script('Main_board.py')
-    # # Get names of all the imported modules
-    # names = list(f.modules.keys())
-    # # Get a sorted list of the root modules imported
-    # basemods = sorted(set([name.split('.')[0] for name in names]))
-    # # Print it nicely
-    # print("\n".join(basemods))
-
-    # try:
-    #     from pip._internal.operations import freeze
-    # except ImportError:  # pip < 10.0
-    #     from pip.operations import freeze
-    #
-    # x = freeze.freeze()
-    # for p in x:
-    #     print(p)
-
-    # try:
-    #     from pip._internal.operations import freeze
-    # except ImportError:  # pip < 10.0
-
-    # try:
-    #     from pip._internal.operations import freeze
-    # except ImportError:  # pip < 10.0
-    #     from pip.operations import freeze
-
-    import pip
-    f = open('requirement.txt')
-    for req in f:
-        print (req)
-        x = pip._internal.operations(['install', req])
 
     window = tk.Tk()
     window.wm_title("Spot")

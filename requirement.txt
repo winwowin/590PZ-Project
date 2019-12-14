@@ -1,5 +1,0 @@
-argparse
-random
-tkinter
-copy
-sys
