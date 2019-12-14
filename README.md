@@ -22,18 +22,17 @@ Run the Game_play.py for random against AI (for testing).
 *No need to install requirements. All packages used are essentials.*
 
 
-## Options
-
-#### AI modes
-Easy mode - random
-Medium - 1 layer look ahead
-Hard - minimax with alpha-beta pruning
-#### Multiplayer
-2-player 
-4-player 
-You will be able to choose from 1-4 human players and fill in the rest with AI player.
-#### Board size
-The board will be a square from 5x5 and larger
+## Options<br>
+#### AI modes<br>
+Easy mode - random<br>
+Medium - 1 layer look ahead<br>
+Hard - minimax with alpha-beta pruning<br>
+#### Multiplayer<br>
+2-player <br>
+4-player <br>
+You will be able to choose from 1-4 human players and fill in the rest with AI player.<br>
+#### Board size<br>
+The board will be a square from 5x5 and larger<br>
 
 ## Gameplay pictures:<br>
 For 5x5:<br>
