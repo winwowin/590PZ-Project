@@ -1,4 +1,4 @@
-# Spot [in progress]
+# Spot <img src="https://steamuserimages-a.akamaihd.net/ugc/845970574218004122/DABC2F92D93453F0BF2E204D80E99B972D75CFCB/" width="50" height="50" /> [in progress]
 
 ## Current known problem:
 Minimax with alpha-beta pruning is inversed. It target the worst score instead of the best.<br>
