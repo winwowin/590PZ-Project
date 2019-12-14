@@ -1,7 +1,7 @@
 # Spot [in progress]
 
 ## Current known problem:
-Minimax with alpha-beta pruning is inverse. It target the worst score instead of the best.
+Minimax with alpha-beta pruning is inversed. It target the worst score instead of the best.
 
 ## Background
 
