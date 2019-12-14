@@ -17,7 +17,7 @@ __status__ = "Prototype"
 
 
 import tkinter as tk
-import Worawich_590PZ_spot
+import Main_board
 import spot_AI
 from copy import deepcopy
 
@@ -359,7 +359,7 @@ class GamePlay(object):
 import argparse
 import random
 import tkinter as tk
-import Worawich_590PZ_spot
+import Main_board
 import spot_AI
 
 def run_random():

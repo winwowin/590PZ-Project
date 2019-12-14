@@ -290,6 +290,42 @@ class GameWindow:
 
 
 if __name__ == '__main__':
+    # from modulefinder import ModuleFinder
+    #
+    # f = ModuleFinder()
+    # # Run the main script
+    # f.run_script('Main_board.py')
+    # # Get names of all the imported modules
+    # names = list(f.modules.keys())
+    # # Get a sorted list of the root modules imported
+    # basemods = sorted(set([name.split('.')[0] for name in names]))
+    # # Print it nicely
+    # print("\n".join(basemods))
+
+    # try:
+    #     from pip._internal.operations import freeze
+    # except ImportError:  # pip < 10.0
+    #     from pip.operations import freeze
+    #
+    # x = freeze.freeze()
+    # for p in x:
+    #     print(p)
+
+    # try:
+    #     from pip._internal.operations import freeze
+    # except ImportError:  # pip < 10.0
+
+    # try:
+    #     from pip._internal.operations import freeze
+    # except ImportError:  # pip < 10.0
+    #     from pip.operations import freeze
+
+    import pip
+    f = open('requirement.txt')
+    for req in f:
+        print (req)
+        x = pip._internal.operations(['install', req])
+
     window = tk.Tk()
     window.wm_title("Spot")
     GameWindow(window)
