@@ -10,6 +10,10 @@ Different implementations of Dave Crummack and Craig Galley's 1988 take (as Infe
 
 The rules can be summarized as follows: each turn, a player can either move one of his pieces two spaces away, or clone one of his pieces onto a neighboring cell. If the newly moved or cloned piece ends up adjacent to some enemy pieces, it converts them into its color so that they go under the player's control.
 
+Original gameplay:<br>
+<img src="https://i.ytimg.com/vi/VFJMB2Gv4rY/hqdefault.jpg"/><br><br>
+
+
 
 ## Approach
 
