@@ -23,8 +23,8 @@ I use Tkinter to make the board by using a grid of spot pictures (simply Paint i
 
 ## Usage
 
-To play in 2-player mode, just run the Main_board.py
-Run the Game_play.py for random against AI (for testing).
+To play in 2-player mode, just run the Main_board.py<br>
+Run the Game_play.py for random against AI (for testing).<br>
 *No need to install requirements. All packages used are essentials.*
 
 
