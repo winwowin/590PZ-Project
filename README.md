@@ -36,9 +36,12 @@ You will be able to choose from 1-4 human players and fill in the rest with AI p
 The board will be a square from 5x5 and larger<br>
 
 ## Gameplay pictures:<br>
-For 5x5:<br>
+
+Default (start game):<br>
+<img src="https://github.com/winwowin/590PZ-Project/raw/master/spot/defult.png" width="70%" height="70%" /><br><br>
+
+5x5:<br>
 <img src="https://github.com/winwowin/590PZ-Project/blob/master/game1.png?raw=true" width="70%" height="70%" /><br><br>
 
-For 7x7:<br>
-
+7x7:<br>
 <img src="https://github.com/winwowin/590PZ-Project/blob/master/game2.png?raw=true" width="70%" height="70%" />
