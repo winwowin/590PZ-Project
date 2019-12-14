@@ -7,9 +7,7 @@
     <bookmark url="file://$PROJECT_DIR$/Game_play.py" line="453" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08407624-7556-4633-b2eb-e711adf3dc9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Main_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_board.py" afterDir="false" />
-    </list>
+    <list default="true" id="08407624-7556-4633-b2eb-e711adf3dc9b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +16,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/590PZ_Project$AI.coverage" NAME="AI Coverage Results" MODIFIED="1575486483143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/590PZ_Project$Main_board.coverage" NAME="Main_board Coverage Results" MODIFIED="1576287942346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/590PZ_Project$Main_board.coverage" NAME="Main_board Coverage Results" MODIFIED="1576290243266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/590PZ_Project$Worawich_590PZ_spot.coverage" NAME="Worawich_590PZ_spot Coverage Results" MODIFIED="1574444181466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/590PZ_Project$Game_play.coverage" NAME="Game_play Coverage Results" MODIFIED="1576286457842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -39,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main_board.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2788">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="442">
+              <caret line="218" column="33" lean-forward="true" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
               <folding>
                 <element signature="e#417#437#0" expanded="true" />
                 <marker date="1576288039696" expanded="true" signature="4702:4711" ph="..." />
@@ -317,12 +315,12 @@
       <workItem from="1574407048670" duration="8866000" />
       <workItem from="1575485894269" duration="7083000" />
       <workItem from="1575511644946" duration="18078000" />
-      <workItem from="1576286316136" duration="1709000" />
+      <workItem from="1576286316136" duration="2388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114069000" />
+    <option name="totallyTimeSpent" value="114748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -484,8 +482,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main_board.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2788">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="442">
+          <caret line="218" column="33" lean-forward="true" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
           <folding>
             <element signature="e#417#437#0" expanded="true" />
             <marker date="1576288039696" expanded="true" signature="4702:4711" ph="..." />
